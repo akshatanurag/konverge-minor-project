@@ -35,7 +35,7 @@ router.post('/register',middleware.isLoggedOut,async (req, res) => {
       user.token = await user.generateAuthToken(submittedUser.email);
         
       await user.save();
-      return res.redirect(`/dashboard?success=true&message=Signup Successful, Kindly proceed to login`)
+      return res.redirect(`/login?success=true&message=Signup Successful, Kindly proceed to login`)
 
 
     //   res.header('x-auth-token', token).send({
